@@ -81,8 +81,10 @@ set autoindent
 set autowrite
 
 " Misc
+set mouse=a
 set wildmenu
 set showcmd
+set incsearch
 
 " Encoding
 set encoding=utf-8
@@ -92,15 +94,13 @@ language message en_US.UTF-8
 
 " Display
 set number
-set wrap
-set tw=80
+set textwidth=80
 set fo+=mB
+set lbr
 colo solarized
 set background=dark
 if has("gui_running")
 	set guioptions+=b
-else
-	set lbr
 endif
 
 set guifont=Droid\ Sans\ Mono\ Medium\ 11
@@ -110,7 +110,7 @@ set guifont=Droid\ Sans\ Mono\ Medium\ 11
 " Lang Templates
 
 call SingleCompile#SetCompilerTemplate('pascal', 'fpc', 'Free Pascal Compiler', 
-                        \'fpc', '-g -viwnh', '')
+                        \'fpc', '-g', '')
 
 " map
 nmap <F9> :SCCompile <CR>
