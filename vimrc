@@ -27,7 +27,7 @@ endif
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 "if has("autocmd")
-"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe " "normal! g'\"" | endif
 "endif
 
 " Uncomment the following to have Vim load indentation rules and plugins
@@ -79,6 +79,7 @@ set whichwrap=h,l
 set smarttab
 set autoindent
 set autowrite
+set display=lastline
 
 " Misc
 set mouse=a
@@ -94,13 +95,15 @@ language message en_US.UTF-8
 
 " Display
 set number
-set textwidth=80
+set tw=79
 set fo+=mB
 set lbr
-colo solarized
 set background=dark
 if has("gui_running")
 	set guioptions+=b
+	colo solarized
+else
+	colo torte
 endif
 
 set guifont=Droid\ Sans\ Mono\ Medium\ 11
@@ -110,8 +113,10 @@ set guifont=Droid\ Sans\ Mono\ Medium\ 11
 " Lang Templates
 
 call SingleCompile#SetCompilerTemplate('pascal', 'fpc', 'Free Pascal Compiler', 
-                        \'fpc', '-g', '')
+                        \'fpc', '-g', '$(FILE_RUN)$')
 
+call SingleCompile#SetCompilerTemplate('cpp', 'g++', 'GNU C++ Compiler', 
+                        \'g++', '-g -Wall -o $(FILE_EXEC)$', '$(FILE_RUN)$')
 " map
 nmap <F9> :SCCompile <CR>
 nmap <C-F9> :SCCompileRun <CR>
@@ -129,3 +134,6 @@ let g:lightline = {
       \ }
 set laststatus=2
 set noshowmode
+
+" Conque Term
+nmap <F4> :ConqueTermSplit zsh <CR>
