@@ -134,6 +134,3 @@ let g:lightline = {
       \ }
 set laststatus=2
 set noshowmode
-
-" Conque Term
-nmap <F4> :ConqueTermSplit zsh <CR>
