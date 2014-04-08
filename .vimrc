@@ -138,3 +138,6 @@ let g:lightline = {
       \ }
 set laststatus=2
 set noshowmode
+
+" vim-latex
+let g:Tex_CompileRule_dvi='xelatex -interaction=nonstop mode $'
