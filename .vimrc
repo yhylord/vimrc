@@ -65,6 +65,7 @@ Bundle 'gmarik/vundle'
 Bundle 'itchyny/lightline.vim'
 Bundle 'mbbill/fencview'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'jcf/vim-latex'
 
 " vim-scripts repos
 Bundle 'SingleCompile'
@@ -108,12 +109,15 @@ endif
 
 set guifont=Droid\ Sans\ Mono\ Medium\ 11
 
+" Filetype
+autocmd BufNewFile,BufRead *.pas set et sts=2 sw=2 
+
 " SingleCompile
 
 " Lang Templates
 
 call SingleCompile#SetCompilerTemplate('pascal', 'fpc', 'Free Pascal Compiler', 
-                        \'fpc', '-g', '$(FILE_RUN)$')
+                        \'fpc', '-gl -Crtoi', '$(FILE_RUN)$')
 
 call SingleCompile#SetCompilerTemplate('cpp', 'g++', 'GNU C++ Compiler', 
                         \'g++', '-g -Wall -o $(FILE_EXEC)$', '$(FILE_RUN)$')
