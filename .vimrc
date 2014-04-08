@@ -140,4 +140,6 @@ set laststatus=2
 set noshowmode
 
 " vim-latex
-let g:Tex_CompileRule_dvi='xelatex -interaction=nonstop mode $'
+let g:Tex_Flavor = 'xelatex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_dvi = 'xelatex %'
