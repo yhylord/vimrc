@@ -78,7 +78,6 @@ set whichwrap=h,l
 
 " edit
 set smarttab
-set autoindent
 set autowrite
 set display=lastline
 
@@ -96,9 +95,7 @@ language message en_US.UTF-8
 
 " Display
 set number
-set tw=79
 set fo+=mB
-set lbr
 set background=dark
 if has("gui_running")
 	set guioptions+=b
@@ -109,15 +106,12 @@ endif
 
 set guifont=Droid\ Sans\ Mono\ Medium\ 11
 
-" Filetype
-autocmd BufNewFile,BufRead *.pas set et sts=2 sw=2 
-
 " SingleCompile
 
 " Lang Templates
 
 call SingleCompile#SetCompilerTemplate('pascal', 'fpc', 'Free Pascal Compiler', 
-                        \'fpc', '-gl -Crtoi', '$(FILE_RUN)$')
+                        \'fpc', '-dDEBUG', '$(FILE_RUN)$')
 
 call SingleCompile#SetCompilerTemplate('cpp', 'g++', 'GNU C++ Compiler', 
                         \'g++', '-g -Wall -o $(FILE_EXEC)$', '$(FILE_RUN)$')
@@ -138,8 +132,3 @@ let g:lightline = {
       \ }
 set laststatus=2
 set noshowmode
-
-" vim-latex
-let g:Tex_Flavor = 'xelatex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_dvi = 'xelatex %'
