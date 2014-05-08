@@ -55,8 +55,13 @@ endif
 " vundle
 set nocp
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+if has('unix')
+	set rtp+=~/.vim/bundle/vundle
+	call vundle#rc('~/.vim/bundle/vundle')
+else
+	set rtp+=$VIM\vimfiles\bundle\Vundle.vim
+	call vundle#rc('$VIM\vimfiles\bundle\Vundle.vim')
+endif
 
 " using vundle manage vundle
 Bundle 'gmarik/vundle'
@@ -88,10 +93,14 @@ set showcmd
 set incsearch
 
 " Encoding
-set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set langmenu=en_US.UTF-8
-language message en_US.UTF-8
+if has('unix')
+	set langmenu=en_US.UTF-8
+	language message en_US.UTF-8
+else
+	set langmenu=zh_CN.gb2312
+	language message zh_CN.gb2312
+endif
 
 " Display
 set number
@@ -104,7 +113,12 @@ else
 	colo torte
 endif
 
-set guifont=Droid\ Sans\ Mono\ Medium\ 11
+if has('unix')
+	set guifont=Droid\ Sans\ Mono\ Medium\ 11
+else
+	set guifont=Lucida_Console: h11: cANSI
+	set guifontwide=NSimSun: h11: cGB2312
+endif
 
 " SingleCompile
 
@@ -115,6 +129,8 @@ call SingleCompile#SetCompilerTemplate('pascal', 'fpc', 'Free Pascal Compiler',
 
 call SingleCompile#SetCompilerTemplate('cpp', 'g++', 'GNU C++ Compiler', 
                         \'g++', '-g -Wall -o $(FILE_EXEC)$', '$(FILE_RUN)$')
+call SingleCompile#SetCompilerTemplate('tex', 'xelatex', 'XeLaTeX',
+			\'xelatex', '-interaction=nonstopmode %', '')
 " map
 nmap <F9> :SCCompile <CR>
 nmap <C-F9> :SCCompileRun <CR>
