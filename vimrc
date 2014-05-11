@@ -56,15 +56,15 @@ endif
 set nocp
 filetype off
 if has('unix')
-	set rtp+=~/.vim/bundle/vundle
-	call vundle#rc('~/.vim/bundle/vundle')
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
 else
 	set rtp+=$VIM\vimfiles\bundle\Vundle.vim
-	call vundle#rc('$VIM\vimfiles\bundle\Vundle.vim')
+	call vundle#begin($VIM\vimfiles\bundle)
 endif
 
 " using vundle manage vundle
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " original repos on github
 Bundle 'itchyny/lightline.vim'
@@ -75,6 +75,7 @@ Bundle 'jcf/vim-latex'
 " vim-scripts repos
 Bundle 'SingleCompile'
 
+call vundle#end()
 filetype plugin indent on
 
 " basic
@@ -98,8 +99,8 @@ if has('unix')
 	set langmenu=en_US.UTF-8
 	language message en_US.UTF-8
 else
-	set langmenu=zh_CN.gb2312
-	language message zh_CN.gb2312
+	set langmenu=zh_CN.GB18030
+	language message zh_CN.GB18030
 endif
 
 " Display
