@@ -129,7 +129,7 @@ call SingleCompile#SetCompilerTemplate('pascal', 'fpc', 'Free Pascal Compiler',
                         \'fpc', '-dDEBUG', '$(FILE_RUN)$')
 
 call SingleCompile#SetCompilerTemplate('cpp', 'g++', 'GNU C++ Compiler', 
-                        \'g++', '-g -Wall -o $(FILE_EXEC)$', '$(FILE_RUN)$')
+                        \'g++', '-g -Wall -Wextra -o $(FILE_EXEC)$', '$(FILE_RUN)$')
 call SingleCompile#SetCompilerTemplate('tex', 'xelatex', 'XeLaTeX',
 			\'xelatex', '-interaction=nonstopmode %', '')
 " map
