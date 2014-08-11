@@ -5,10 +5,10 @@ if [ ! -e vim/bundle/Vundle.vim ]; then
 fi
 vim +BundleInstall +qa
 if [ -e ~/.vim ]; then
-	mv ~/.vim ~/.vim.d.bak
+	mv ~/.vim{,.d.bak}
 fi
 if [ -e ~/.vimrc ]; then
-	mv ~/.vimrc ~/.vimrc.bak
+	mv ~/.vimrc{,.bak}
 fi
 cd
 ln -s gitrepo/vimrc/vimrc .vimrc
