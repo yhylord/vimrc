@@ -154,3 +154,8 @@ set noshowmode
 let g:Tex_Flavor = 'xelatex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode %'
+
+" shell for unix
+if has("unix")
+	set shell=/bin/bash
+endif
