@@ -67,9 +67,9 @@ endif
 Bundle 'gmarik/Vundle.vim'
 
 " original repos on github
-Bundle 'itchyny/lightline.vim'
-Bundle 'mbbill/fencview'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'dag/vim-fish'
+Bundle 'itchyny/lightline.vim'
 Bundle 'jcf/vim-latex'
 
 " vim-scripts repos
