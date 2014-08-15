@@ -121,17 +121,6 @@ else
 	set guifontwide=NSimSun: h11: cGB2312
 endif
 
-" SingleCompile
-
-" Lang Templates
-
-call SingleCompile#SetCompilerTemplate('pascal', 'fpc', 'Free Pascal Compiler', 
-                        \'fpc', '-dDEBUG', '$(FILE_RUN)$')
-
-call SingleCompile#SetCompilerTemplate('cpp', 'g++', 'GNU C++ Compiler', 
-                        \'g++', '-g -Wall -Wextra -o $(FILE_EXEC)$', '$(FILE_RUN)$')
-call SingleCompile#SetCompilerTemplate('tex', 'xelatex', 'XeLaTeX',
-			\'xelatex', '-interaction=nonstopmode %', '')
 " map
 nmap <F9> :SCCompile <CR>
 nmap <C-F9> :SCCompileRun <CR>
@@ -149,11 +138,6 @@ let g:lightline = {
       \ }
 set laststatus=2
 set noshowmode
-
-" vim-latex
-let g:Tex_Flavor = 'xelatex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode %'
 
 " shell for unix
 if has("unix")
