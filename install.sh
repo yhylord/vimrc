@@ -10,6 +10,7 @@ fi
 if [ -e ~/.vimrc ]; then
 	mv ~/.vimrc{,.bak}
 fi
+path=$(pwd)
 cd
-ln -s gitrepo/vimrc/vimrc .vimrc
-ln -s gitrepo/vimrc/vim .vim
+ln -s $path/vimrc .vimrc
+ln -s $path/vim .vim

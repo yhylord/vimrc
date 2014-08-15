@@ -9,6 +9,7 @@ end
 if test -e ~/.vimrc
 	mv ~/.vimrc{,.bak}
 end
+set path (pwd)
 cd
-ln -s gitrepo/vimrc/vimrc .vimrc
-ln -s gitrepo/vimrc/vim .vim
+ln -s $path/vimrc .vimrc
+ln -s $path/vim .vim
