@@ -60,20 +60,20 @@ if has('unix')
 	call vundle#begin()
 else
 	set rtp+=$VIM\vimfiles\bundle\Vundle.vim
-	call vundle#begin($VIM\vimfiles\bundle)
+	call vundle#begin()
 endif
 
 " using vundle manage vundle
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " original repos on github
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'dag/vim-fish'
-Bundle 'itchyny/lightline.vim'
-Bundle 'jcf/vim-latex'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'dag/vim-fish'
+Plugin 'itchyny/lightline.vim'
+Plugin 'jcf/vim-latex'
 
 " vim-scripts repos
-Bundle 'SingleCompile'
+Plugin 'SingleCompile'
 
 call vundle#end()
 filetype plugin indent on
@@ -117,8 +117,8 @@ endif
 if has('unix')
 	set guifont=Droid\ Sans\ Mono\ Medium\ 11
 else
-	set guifont=Lucida_Console: h11: cANSI
-	set guifontwide=NSimSun: h11: cGB2312
+	set guifont=Lucida_Console:h10:cANSI
+	set guifontwide=NSimSun:h10:cGB2312
 endif
 
 " map
