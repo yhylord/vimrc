@@ -59,8 +59,8 @@ if has('unix')
 	set rtp+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()
 else
-	set rtp+=$VIM\vimfiles\bundle\Vundle.vim
-	call vundle#begin()
+	set rtp+=$VIM/vimfiles/bundle/Vundle.vim
+	call vundle#begin($VIM."/vimfiles/bundle")
 endif
 
 " using vundle manage vundle
