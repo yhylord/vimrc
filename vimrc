@@ -143,3 +143,6 @@ set noshowmode
 if has("unix")
 	set shell=/bin/bash
 endif
+
+" latex
+let g:tex_flavor='latex'

@@ -4,7 +4,6 @@ set ts=2
 set sw=2
 set et
 
-let g:Tex_Flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_CompileRule_pdf='xelatex -interaction=nonstopmode -shell-escape %'
 
