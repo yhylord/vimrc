@@ -99,9 +99,6 @@ set mouse=a
 set wildmenu
 set showcmd
 set incsearch
-if has("unix")
-	set shell=/bin/bash
-endif
 "}}}
 
 " Encoding{{{1
