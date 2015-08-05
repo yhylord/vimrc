@@ -1,3 +1,4 @@
+" Default (initially on Ubuntu){{{1
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim (usually just
 " /usr/share/vim/vimcurrent/debian.vim) and sourced by the call to :runtime " you can find below.  If you wish to change any of those settings, you should
 " do it in this file (/etc/vim/vimrc), since debian.vim will be overwritten
@@ -51,8 +52,9 @@ endif
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
+"}}}
 
-" vundle
+" Vundle{{{1
 set nocp
 filetype off
 if has('unix')
@@ -63,37 +65,46 @@ else
 	call vundle#begin($VIM."/vimfiles/bundle")
 endif
 
-" using vundle manage vundle
+" Using vundle manage vundle{{{2
 Plugin 'gmarik/Vundle.vim'
 
-" original repos on github
+" Original repos on github
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'dag/vim-fish'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jcf/vim-latex'
 
-" vim-scripts repos
+" Vim-scripts repos
 Plugin 'SingleCompile'
+"}}}
 
 call vundle#end()
 filetype plugin indent on
+"}}}
 
-" basic
+" Basic{{{1
 set backspace=indent,eol,start
 set whichwrap=h,l
+"}}}
 
-" edit
+" Edit{{{1
 set smarttab
 set autowrite
 set display=lastline
+"}}}
 
-" Misc
+" Misc{{{1
+set fdm=marker
 set mouse=a
 set wildmenu
 set showcmd
 set incsearch
+if has("unix")
+	set shell=/bin/bash
+endif
+"}}}
 
-" Encoding
+" Encoding{{{1
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set encoding=utf-8
 if has('unix')
@@ -103,8 +114,9 @@ else
 	set langmenu=zh_CN.GB18030
 	language message zh_CN.GB18030
 endif
+"}}}
 
-" Display
+" Display{{{1
 set number
 set fo+=mB
 set background=dark
@@ -121,13 +133,15 @@ else
 	set guifont=Lucida_Console:h10:cANSI
 	set guifontwide=NSimSun:h10:cGB2312
 endif
+"}}}
 
-" map
+" SingleCompile{{{1
+" Map
 nmap <F9> :SCCompile <CR>
 nmap <C-F9> :SCCompileRun <CR>
 nmap <M-F5> :SCViewResult <CR>
 
-" feature
+" Feature
 let g:SingleCompile_usequickfix=1
 
 " lightline
@@ -139,8 +153,4 @@ let g:lightline = {
       \ }
 set laststatus=2
 set noshowmode
-
-" shell for unix
-if has("unix")
-	set shell=/bin/bash
-endif
+"}}}
