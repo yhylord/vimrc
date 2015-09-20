@@ -6,5 +6,5 @@ set lbr
 set cindent
 
 call SingleCompile#SetCompilerTemplate('cpp', 'g++', 'GNU C++ Compiler', 
-                                      \'g++', '-g -Wall -Wextra --std=c++11 -D yhylord -o $(FILE_EXEC)$',
+                                      \'g++', '-g -Wall -Wextra --std=c++11 -D YHYLORD -o $(FILE_EXEC)$',
                                       \'$(FILE_RUN)$')
