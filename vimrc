@@ -125,7 +125,7 @@ else
 endif
 
 if has('unix')
-	set guifont=Droid\ Sans\ Mono\ Medium\ 11
+	set guifont=Droid\ Sans\ Mono\ Medium\ 10
 else
 	set guifont=Lucida_Console:h10:cANSI
 	set guifontwide=NSimSun:h10:cGB2312
